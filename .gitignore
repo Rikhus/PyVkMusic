@@ -1,0 +1,4 @@
+/build
+*.spec
+vk_config.v2.json
+__pycache__
