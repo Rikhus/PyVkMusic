@@ -1,5 +1,5 @@
 # PyVkMusic
-![logo](https://yandex.ru/images/search?pos=0&img_url=https%3A%2F%2Fhsl.guru%2Fwp-content%2Fuploads%2F2016%2F12%2Flogo-1.png&text=vk%20music&rpt=simage)
+![logo](https://yandex.ru/images/search?pos=0&img_url=https%3A%2F%2Fhsl.guru%2Fwp-content%2Fuploads%2F2016%2F12%2Flogo-1.png)
 
 Это программа для скачивания музыки из вк, написанная на Python 2.7+PyQT5. В дальнейшем буду ее развивать. На данном репозитории лежит Windows версия программы.
 ***
