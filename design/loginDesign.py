@@ -48,7 +48,7 @@ class Ui_MainWindow(object):
         self.lblImg = QtWidgets.QLabel(self.centralwidget)
         self.lblImg.setGeometry(QtCore.QRect(140, 0, 241, 181))
         self.lblImg.setText("")
-        self.lblImg.setPixmap(QtGui.QPixmap("vk_login.png"))
+        self.lblImg.setPixmap(QtGui.QPixmap("resources\\img\\vk_login.png"))
         self.lblImg.setScaledContents(True)
         self.lblImg.setObjectName("lblImg")
         self.lblStatus = QtWidgets.QLabel(self.centralwidget)
@@ -64,4 +64,3 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.loginButton.setText(_translate("MainWindow", "Login"))
-

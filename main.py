@@ -1,4 +1,6 @@
 import sys
+sys.path.insert(0, 'design')
+sys.path.insert(0, 'resources')
 from time import time
 import os
 import requests
@@ -37,10 +39,10 @@ class loginApp(QtWidgets.QMainWindow, loginDesign.Ui_MainWindow):
                 config.login=self.login
                 config.password=self.password
                 config.my_id=self.my_id
-                notif.sendNotification("Авторизация прошла успешно","VkMusic","VkMusic","vk.ico")
+                notif.sendNotification("Авторизация прошла успешно","VkMusic","VkMusic","resources\\img\\vk.ico")
                 self.window=mainApp() #берем дизайн
                 self.window.setWindowTitle('VK Music')
-                self.window.setWindowIcon(QIcon('vk.png'))       #favicon-32x32.png
+                self.window.setWindowIcon(QIcon('resources\\img\\vk.png'))       #favicon-32x32.png
                 self.window.show()   #показываем окно
                 self.close()
 
@@ -126,7 +128,11 @@ class AudioDownloader(QObject):
 
     @pyqtSlot()
     def run(self):
-        notif.sendNotification("Загрузка началась","VkMusic","VkMusic","vk.ico")
+        try:
+            notif.sendNotification("Загрузка началась","VkMusic","VkMusic","resources\\img\\vk.ico")
+        except Exception as e:
+            print(e)
+                        
         self.window.lblStatus.setStyleSheet("color: rgb(0, 255, 0)")
         self.window.lblStatus.setText('Идет скачивание')
         for x in range(self.window.listWidget.count()):
@@ -175,11 +181,11 @@ class AudioDownloader(QObject):
                 self.window.lblStatus.setStyleSheet("color: rgb(0, 255, 0)")
                 self.window.lblStatus.setText('Скачано успешно')
                 config.isStopped=True
-                notif.sendNotification("Загрузка завершена","VkMusic","VkMusic","vk.ico")
+                notif.sendNotification("Загрузка завершена","VkMusic","VkMusic","resources\\img\\vk.ico")
             else:
                 self.window.lblStatus.setStyleSheet("color: rgb(255, 0, 0)")
                 self.window.lblStatus.setText("Остановлено")
-                notif.sendNotification("Загрузка остановлена","VkMusic","VkMusic","vk.ico")
+                notif.sendNotification("Загрузка остановлена","VkMusic","VkMusic","resources\\img\\vk.ico")
             print('Stop')
 
 
@@ -208,7 +214,7 @@ def main():
     app=QtWidgets.QApplication(sys.argv)    #новая прога
     window=loginApp() #берем дизайн
     window.setWindowTitle('VK Music - Login')
-    window.setWindowIcon(QIcon('vk.png'))       #favicon-32x32.png
+    window.setWindowIcon(QIcon('resources\\img\\vk.png'))       #favicon-32x32.png
     window.show()   #показываем окно
     app.exec()  #запускаем
 
